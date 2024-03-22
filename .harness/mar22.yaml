@@ -1,0 +1,26 @@
+pipeline:
+  name: mar22
+  identifier: mar22
+  tags: {}
+  template:
+    templateRef: breakingchangepipeline
+    versionLabel: v1
+    gitBranch: master
+    templateInputs:
+      stages:
+        - stage:
+            identifier: asd
+            template:
+              templateInputs:
+                type: Deployment
+                spec:
+                  environment:
+                    environmentRef: <+input>
+                    environmentInputs: <+input>
+                    serviceOverrideInputs: <+input>
+                    infrastructureDefinitions: <+input>
+                  service:
+                    serviceRef: <+input>
+                    serviceInputs: <+input>
+  projectIdentifier: meenalocal
+  orgIdentifier: default
